@@ -36,34 +36,34 @@ task :install_bower do
   end
 end
 before 'deploy:compile_assets', 'install_bower'
-after 'deploy', 'puma:start'
 
-# desc 'Initial Deploy'
-#   task :initial do
-#     on roles(:app) do
-#       before 'deploy:restart', 'puma:start'
-#       invoke 'deploy'
-#     end
-#   end
+desc 'Initial Deploy'
+  task :initial do
+    on roles(:app) do
+      before 'deploy:restart', 'puma:start'
+      invoke 'deploy'
+    end
+  end
 
-#   desc 'Restart application'
-#   task :restart do
-#     on roles(:app), in: :sequence, wait: 5 do
-#       invoke 'puma:smart_restart'
-#     end
-#   end
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'puma:smart_restart'
+    end
+  end
 
-#   # task :custom_puma_restart do
-#   #   on roles (fetch(:puma_role)) do |role|
-#   #     within current_path do
-#   #       puma_switch_user(role) do
-#   #         execute "xargs -n 1 kill -s SIGUSR2 < #{shared_path}/tmp/pids/puma.pid"
-#   #       end
-#   #     end
-#   #   end
-#   # end
+  task :custom_puma_restart do
+    on roles (fetch(:puma_role)) do |role|
+      within current_path do
+        puma_switch_user(role) do
+          execute "xargs -n 1 kill -s SIGUSR2 < #{shared_path}/tmp/pids/puma.pid"
+        end
+      end
+    end
+  end
 
-#   before :starting,     :check_revision
-#   after  :finishing,    :compile_assets
-#   after  :finishing,    :cleanup
-#   after  :finishing,    :restart
+  before :starting,     :check_revision
+  after  :finishing,    :compile_assets
+  after  :finishing,    :cleanup
+  after  :finishing,    :restart
+  after  :finishing,    :custom_puma_restart
