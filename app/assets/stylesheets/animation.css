@@ -1,0 +1,58 @@
+.first {
+ -webkit-animation: bannermove 72s linear infinite;
+    -moz-animation: bannermove 72s linear infinite;
+     -ms-animation: bannermove 72s linear infinite;
+      -o-animation: bannermove 72s linear infinite;
+         animation: bannermove 72s linear infinite;
+}
+ 
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -5940px;
+ }
+ 
+}
+
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -5940px;
+ }
+ 
+}
+ 
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -5940px;
+ }
+ 
+}
+
+ 
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -5940px;
+ }
+ 
+}
+ 
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -5940px;
+ }
+ 
+}

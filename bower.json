@@ -1,0 +1,26 @@
+{
+  "name": "paparazziph",
+  "authors": [
+    "Kenneth Bryan Chung <kbchung18@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/assets/vendor/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-pjax": "~1.9.6",
+    "jquery": "~2.2.1",
+    "bootstrap": "~3.3.6"
+  }
+}

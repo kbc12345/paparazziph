@@ -1,0 +1,21 @@
+section#reviews
+  .row
+    .col-md-12
+      .page-header
+        span Reviews given by our clients
+        br
+        a.btn.btn-primary href="https://www.facebook.com/PaparazziPH/reviews/" target="_blank"View in our FB page
+  -@reviews.each do |review|
+    .row.margin
+      -review.compact.each do |r|
+        .col-md-4
+          .review
+            p =r.message
+            br
+            p.reviewer
+              |rating:&nbsp;
+              =r.rating 
+              |&nbsp;stars
+              br
+              |-
+              =r.reviewer
