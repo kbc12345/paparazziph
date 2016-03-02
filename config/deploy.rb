@@ -52,18 +52,4 @@ desc 'Initial Deploy'
     end
   end
 
-  # task :custom_puma_restart do
-  #   on roles (fetch(:puma_role)) do |role|
-  #     within current_path do
-  #       puma_switch_user(role) do
-  #         execute "xargs -n 1 kill -s SIGUSR2 < #{shared_path}/tmp/pids/puma.pid"
-  #       end
-  #     end
-  #   end
-  # end
-
-  # before :starting,     :check_revision
-  # after  :finishing,    :compile_assets
-  # after  :finishing,    :cleanup
   after  'deploy',    :restart
-  # after  'deploy',    :custom_puma_restart
