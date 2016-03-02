@@ -43,5 +43,6 @@ class Site::UsersController < SiteController
       end
     end
   end
+  handle_asynchronously :login
 
 end

@@ -51,6 +51,10 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-delayed-job (1.1.0)
+      capistrano (>= 3.1)
+      daemons (>= 1.1)
+      sshkit (>= 1.2.0)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -69,7 +73,13 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.0)
+    daemons (1.2.3)
     debug_inspector (0.0.2)
+    delayed_job (4.1.1)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.1.0)
+      activerecord (>= 3.0, < 5)
+      delayed_job (>= 3.0, < 5)
     erubis (2.7.0)
     execjs (2.6.0)
     faraday (0.9.2)
@@ -227,10 +237,13 @@ DEPENDENCIES
   byebug
   capistrano
   capistrano-bundler
+  capistrano-delayed-job
   capistrano-rails
   capistrano-rvm
   capistrano3-puma
   coffee-rails (~> 4.1.0)
+  daemons
+  delayed_job_active_record
   figaro
   jbuilder (~> 2.0)
   jquery-rails
