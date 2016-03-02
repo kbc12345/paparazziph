@@ -8,7 +8,6 @@ require 'capistrano/rvm'
 require 'capistrano/rails/assets' # for asset handling add
 require 'capistrano/rails/migrations' # for running migrations
 require 'capistrano/puma'
-require 'capistrano/delayed_job'
 
 # Include tasks from other gems included in your Gemfile
 #

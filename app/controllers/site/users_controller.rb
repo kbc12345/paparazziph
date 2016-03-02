@@ -1,8 +1,7 @@
+require 'net/smtp'
+require 'rubygems'
+require 'mailfactory'
 class Site::UsersController < SiteController
-
-  ADMIN_IDS = ["10208780839255340", "1966758440216682"]
-
-  ALBUM_IGNORE_LIST = ["Timeline Photos", "Photo Invitation", "Profile Pictures", "Cover Photos", "Guests who instagram their photo experience with us"]
 
   def index
 
@@ -10,6 +9,18 @@ class Site::UsersController < SiteController
 
   def login
     fb = User.koala(request.env['omniauth.auth']['credentials'])
+    CollectionBuilderJob.perform(fb)
+  end
+
+end
+
+class CollectionBuilderJob
+  ADMIN_IDS = ["10208780839255340", "1966758440216682"]
+
+  ALBUM_IGNORE_LIST = ["Timeline Photos", "Photo Invitation", "Profile Pictures", "Cover Photos", "Guests who instagram their photo experience with us"]
+
+  def self.perform(fb)
+    # fb = User.koala(request.env['omniauth.auth']['credentials'])
     user = fb.get_object("me")
     if ADMIN_IDS.include? user["id"]
       current_reviewers = Review.pluck("reviewer")
@@ -42,7 +53,21 @@ class Site::UsersController < SiteController
         end
       end
     end
-  end
-  handle_asynchronously :login
 
+    #mail when scrape is done
+    message = <<-EOF
+      Scraping is done
+    EOF
+    mail = MailFactory.new()
+    mail.to = "thepaparazziteam@gmail.com"
+    mail.from = "thepaparazziteam@gmail.com"
+    mail.subject = "Scraping Done"
+    mail.text = message
+    
+    smtp = Net::SMTP.new 'smtp.gmail.com', 587
+    smtp.enable_starttls
+    smtp.start('gmail.com', ENV["gmail_username"], ENV["gmail_password"], :login)
+    smtp.send_message mail.to_s(), 'thepaparazziteam@gmail.com', 'thepaparazziteam@gmail.com'
+    smtp.finish
+  end
 end
