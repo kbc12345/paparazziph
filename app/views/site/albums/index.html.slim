@@ -1,0 +1,11 @@
+section#albums
+  -@albums.each do |album|
+    .row
+    -album.compact.each do |a|
+      .col-md-3.albumList
+        a.thumbnail href=(gallery_album_photos_path(@category, a.id))
+          -if a.layout=="vertical"
+            .albumCover.vertical style="background-image: url(#{a.cover_photo});"
+          -if a.layout=="horizontal"
+            .albumCover style="background-image: url(#{a.cover_photo});"
+          span =a.name

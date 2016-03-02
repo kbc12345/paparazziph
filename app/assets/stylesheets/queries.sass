@@ -1,0 +1,43 @@
+//mobile specifics
+$phone-s: 320px
+$phone-m: 568px
+$phone-l: 667px
+$tablet-s :767px
+$desktop-s: 845px
+$desktop-m: 1091px
+
+=respond-to($min,$max)
+  @if $max == 0
+    @media only screen and (min-width: $min)
+      @content
+  @else if $min == 0
+    @media only screen and (max-width: $max)
+      @content
+  @else if $min !=0 AND $max !=0
+    @media only screen and (min-width: $min) and (max-width: $max)
+      @content
+
+
+=hide-desktop
+  +respond-to($tablet-s+1,0)
+    display: none
+
+=hide-mobile
+  +respond-to(0,$tablet-s)
+    display: none
+
+=hide-desktop-s
+  +respond-to(0,$desktop-s)
+    display: none
+
+=hide-desktop-m
+  +respond-to($desktop-m+1,0)
+    display: none
+
+
+iframe
+  width: 100%
+  height: 500px
+  +respond-to(900px,1200px)
+  +respond-to(0px,400px)
+    height: 800px

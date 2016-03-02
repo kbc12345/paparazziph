@@ -1,0 +1,15 @@
+section#albumPhotos
+  div#photoModal class="modal fade" role="dialog"
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button type="button" class="close" data-dismiss="modal" aria-hidden="true" &times
+        .modal-body
+          .thumbnail
+            img#modalImage src=""
+  -@collection.each do |photos|
+    .row
+    -photos.compact.each do |photo|
+      .col-md-3
+        .thumbnail
+          img.photo-gallery src="#{photo.url}" onclick="showImage(this.src)"

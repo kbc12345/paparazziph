@@ -1,0 +1,35 @@
+section#contact
+  div#myModal class="modal fade" role="dialog"
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h4.modal-title Sending Inquiry
+        .modal-body
+          p Please wait while we generate an inquiry for you...
+        .modal-footer
+  .row.row-margin
+    .col-md-3.col-md-offset-2.form-group
+      form.new_question#new_question action="/questions" accept-charset="UTF-8" method="post" onsubmit="$('#btn-modal').click()"
+        p
+          span Got Questions? Inquire Now!
+        input.form-control#form-name required="true" type="text" name="question[name]" placeholder="Name" 
+        br
+        input.form-control required="true" type="text" name="question[email]" placeholder="Email" 
+        br
+        input.form-control required="true" type="text" name="question[mobile]" placeholder="Mobile" 
+        br
+        textarea.form-control rows="7" required="true" name="question[message]" placeholder="Message" 
+        br
+        input.submit.btn.btn-primary type="submit" value="Inquire" name="submitButton"
+      button.btn.btn-info.btn-lg#btn-modal type="button" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" Open Modal
+    .col-md-6.col-md-offset-1
+      img.big src=(asset_path('contact-big.jpg'))
+      .row
+       .col-md-3
+        img.small src=(asset_path('contact-small.jpg'))
+       .col-md-9 
+          p.below
+            |Thank you for visiting! Kindly fill up the form to send us an inquiry
+            br
+            |or call/text us at 09778055808 (Globe) for immediate response
+      

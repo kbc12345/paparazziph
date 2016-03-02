@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PaparazziPH</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%=render 'site/partials/home_nav' %> 
+<div id="pjax-container">
+  <%= yield %>
+</div>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<script src="http://www.youtube.com/iframe_api"></script>
+<script>
+  var ik_player;
+
+  function onYouTubeIframeAPIReady() {
+    //creates the player object
+    ik_player = new YT.Player('welcome_video');
+         
+    console.log('Video API is loaded');
+         
+    //subscribe to events
+    ik_player.addEventListener("onReady",       "onYouTubePlayerReady");
+    ik_player.addEventListener("onStateChange", "onYouTubePlayerStateChange");
+  }
+
+  function onYouTubePlayerReady() {
+    // console.log('Video is ready to play');
+  }
+
+  function onYouTubePlayerStateChange(event) {
+    if (event.data == 0) {
+      $('#home-nav-btn')[0].click()
+    }
+  }
+
+  $(document).pjax('a', '#pjax-container')
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '222359368109237',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d) {
+    var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+    js = d.createElement('script'); js.id = id; js.async = true;
+    js.src = "//connect.facebook.net/en_US/all.js";
+    d.getElementsByTagName('head')[0].appendChild(js);
+  }(document));
+
+  function changeType() {
+    var temp = $('#rates')[0].options.length
+    for (i=0; i<temp; i++){
+      $('#rates')[0].remove(0)
+    }
+    if($('#bookingCategory')[0].value == "Photo Coverage"){
+      var option = document.createElement("option");
+      option.text = "Photo Coverage - P2,500";
+      option.value = "Photo Coverage - P2,500";
+      $('#rates')[0].add(option)
+    }
+    else {
+      var option = document.createElement("option");
+      option.text = "2 Hours - P5,000";
+      option.value = "2 Hours - P5,000";
+      $('#rates')[0].add(option)
+
+      var option = document.createElement("option");
+      option.text = "3 Hours - P6,000";
+      option.value = "3 Hours - P6,000";
+      $('#rates')[0].add(option)
+
+      var option = document.createElement("option");
+      option.text = "4 Hours - P6,900";
+      option.value = "4 Hours - P6,900";
+      $('#rates')[0].add(option)
+
+      var option = document.createElement("option");
+      option.text = "5 Hours - P7,700";
+      option.value = "5 Hours - P7,700";
+      $('#rates')[0].add(option)
+
+      var option = document.createElement("option");
+      option.text = "6 Hours - P8,500";
+      option.value = "6 Hours - P8,500";
+      $('#rates')[0].add(option)
+    }
+  }
+
+  function showImage(imageUrl) {
+    $('#modalImage').attr('src',imageUrl);
+    $('#photoModal').modal('show');
+  }
+
+  $(function(){
+    $('#new_question').submit(function(){
+      $.post($(this).attr('action'), $(this).serialize(), function(json) {
+        $('#btn-modal').click();
+        $('#new_question')[0].reset();
+        $.bootstrapGrowl("Inquiry Sent. We'll reply to you shortly", { type: 'success', delay: 3000, allow_dismiss: true, align: 'right', width: 'auto' });
+      }, 'json');
+      return false;
+    });
+
+    $('#new_booking').submit(function(){
+      $.post($(this).attr('action'), $(this).serialize(), function(json) {
+        $('#btn-modal').click();
+        $('#new_booking')[0].reset();
+        $.bootstrapGrowl("Thank you for booking our service. We'll get in touch with you shortly", { type: 'success', delay: 3000, allow_dismiss: true, align: 'right', width: 'auto' });
+      }, 'json');
+      return false;
+    });
+  });
+</script>
+</body>
+</html>
