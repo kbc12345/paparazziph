@@ -1,9 +1,9 @@
 .first {
- -webkit-animation: bannermove 72s linear infinite;
-    -moz-animation: bannermove 72s linear infinite;
-     -ms-animation: bannermove 72s linear infinite;
-      -o-animation: bannermove 72s linear infinite;
-         animation: bannermove 72s linear infinite;
+ -webkit-animation: bannermove 109.8s linear infinite;
+    -moz-animation: bannermove 109.8s linear infinite;
+     -ms-animation: bannermove 109.8s linear infinite;
+      -o-animation: bannermove 109.8s linear infinite;
+         animation: bannermove 109.8s linear infinite;
 }
  
 @keyframes "bannermove" {
@@ -11,7 +11,7 @@
     margin-left: 0px;
  }
  100% {
-    margin-left: -5940px;
+    margin-left: calc(-100% + (200%/11));
  }
  
 }
@@ -21,7 +21,7 @@
    margin-left: 0px;
  }
  100% {
-   margin-left: -5940px;
+   margin-left: calc(-100% + (200%/11));
  }
  
 }
@@ -31,7 +31,7 @@
    margin-left: 0px;
  }
  100% {
-   margin-left: -5940px;
+   margin-left: calc(-100% + (100%/11*2));
  }
  
 }
@@ -42,7 +42,7 @@
    margin-left: 0px;
  }
  100% {
-   margin-left: -5940px;
+   margin-left: calc(-100% + (100%/11*2));
  }
  
 }
@@ -52,7 +52,7 @@
    margin-left: 0px;
  }
  100% {
-   margin-left: -5940px;
+   margin-left: calc(-100% + (100%/11*2));
  }
  
 }
