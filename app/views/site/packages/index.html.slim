@@ -16,7 +16,7 @@ section#packages
         br
         span Kindly contact us to dicuss your event requirements
       .category.form-group
-        form.new_booking#new_booking action="/bookings" accept-charset="UTF-8" method="post" onsubmit="$('#btn-modal').click()"
+        form.new_booking#new_booking action="/bookings" accept-charset="UTF-8" method="post" data-remote="true" onsubmit="$('#btn-modal').click()"
           span.header Book Your Event Now!
           br
           select#bookingCategory name="booking[category]" onchange="changeType()"

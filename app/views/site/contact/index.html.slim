@@ -9,7 +9,7 @@ section#contact
         .modal-footer
   .row.row-margin
     .col-md-3.col-md-offset-2.form-group
-      form.new_question#new_question action="/questions" accept-charset="UTF-8" method="post" onsubmit="$('#btn-modal').click()"
+      form.new_question#new_question action="/questions" accept-charset="UTF-8" method="post" data-remote="true" onsubmit="$('#btn-modal').click()"
         p
           span Got Questions? Inquire Now!
         input.form-control#form-name required="true" type="text" name="question[name]" placeholder="Name" 
