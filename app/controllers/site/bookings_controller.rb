@@ -31,7 +31,7 @@ class Site::BookingsController < SiteController
     smtp.start('gmail.com', ENV["gmail_username"], ENV["gmail_password"], :login)
     smtp.send_message mail.to_s(), 'thepaparazziteam@gmail.com', 'thepaparazziteam@gmail.com'
     smtp.finish
-    render json: {message: "success"}
-  end
 
+    render json: {}
+  end
 end

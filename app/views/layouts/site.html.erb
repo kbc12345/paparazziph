@@ -39,7 +39,8 @@
     }
   }
 
-  $(document).pjax('a', '#pjax-container')
+  $(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container')
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '222359368109237',
@@ -100,25 +101,25 @@
     $('#photoModal').modal('show');
   }
 
-  // $(function(){
-  //   $('#new_question').submit(function(){
-  //     $.post($(this).attr('action'), $(this).serialize(), function(json) {
-  //       $('#btn-modal').click();
-  //       $('#new_question')[0].reset();
-  //       $.bootstrapGrowl("Inquiry Sent. We'll reply to you shortly", { type: 'success', delay: 3000, allow_dismiss: true, align: 'right', width: 'auto' });
-  //     }, 'json');
-  //     return false;
-  //   });
+  $(function(){
+    $('#new_question').submit(function(){
+      $.post($(this).attr('action'), $(this).serialize(), function(json) {
+        $('#btn-modal').click();
+        $('#new_question')[0].reset();
+        $.bootstrapGrowl("Inquiry Sent. We'll reply to you shortly", { type: 'success', delay: 3000, allow_dismiss: true, align: 'right', width: 'auto' });
+      }, 'json');
+      return false;
+    });
 
-  //   $('#new_booking').submit(function(){
-  //     $.post($(this).attr('action'), $(this).serialize(), function(json) {
-  //       $('#btn-modal').click();
-  //       $('#new_booking')[0].reset();
-  //       $.bootstrapGrowl("Thank you for booking our service. We'll get in touch with you shortly", { type: 'success', delay: 3000, allow_dismiss: true, align: 'right', width: 'auto' });
-  //     }, 'json');
-  //     return false;
-  //   });
-  // });
+    $('#new_booking').submit(function(){
+      $.post($(this).attr('action'), $(this).serialize(), function(json) {
+        $('#btn-modal').click();
+        $('#new_booking')[0].reset();
+        $.bootstrapGrowl("Thank you for booking our service. We'll get in touch with you shortly", { type: 'success', delay: 3000, allow_dismiss: true, align: 'right', width: 'auto' });
+      }, 'json');
+      return false;
+    });
+  });
 
 </script>
 </body>

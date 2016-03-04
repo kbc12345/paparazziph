@@ -2,12 +2,12 @@
   <div class="container-fluid">
     <div class="row">
       <div id="nav-group" class="col-md-8 col-md-offset-2">
-        <a id="home-nav-btn" class="nav-btn btn" href="/home" role="button">HOME</a>
-        <a id="gallery-nav-btn" class="nav-btn btn" href="/gallery" role="button">GALLERY</a>
-        <a id="about-nav-btn" class="nav-btn btn" href="/about" role="button">ABOUT</a>
+        <a data-pjax id="home-nav-btn" class="nav-btn btn" href="/home" role="button">HOME</a>
+        <a data-pjax id="gallery-nav-btn" class="nav-btn btn" href="/gallery" role="button">GALLERY</a>
+        <a data-pjax id="about-nav-btn" class="nav-btn btn" href="/about" role="button">ABOUT</a>
         <img class="brand" src="<%=asset_path('logo.jpg')%>"/>
         <a id="packages-nav-btn" class="nav-btn btn" href="/packages" role="button">PACKAGES</a>
-        <a id="reviews-nav-btn" class="nav-btn btn" href="/reviews" role="button">REVIEWS</a>
+        <a data-pjax id="reviews-nav-btn" class="nav-btn btn" href="/reviews" role="button">REVIEWS</a>
         <a id="contact-nav-btn" class="nav-btn btn" href="/contact" role="button">CONTACT US</a>
       </div>
     </div>
