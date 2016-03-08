@@ -15,6 +15,7 @@ $(document).ready ->
 $(document).on "click", '.nav-btn', (event) ->
   active = event.toElement
   nav_group = $(".nav-btn")
+  $(".navbar-collapse").collapse('hide')
   i = 0
   while i < nav_group.length
     if active == nav_group[i]
