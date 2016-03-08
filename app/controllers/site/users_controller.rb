@@ -17,7 +17,7 @@ end
 class CollectionBuilderJob
   ADMIN_IDS = ["10208780839255340", "1966758440216682"]
 
-  ALBUM_IGNORE_LIST = ["Website", "Timeline Photos", "Photo Invitation", "Profile Pictures", "Cover Photos", "Guests who instagram their photo experience with us"]
+  ALBUM_IGNORE_LIST = ["Untitled Album", "Website", "Timeline Photos", "Photo Invitation", "Profile Pictures", "Cover Photos", "Guests who instagram their photo experience with us"]
 
   def self.perform(fb)
     # fb = User.koala(request.env['omniauth.auth']['credentials'])
