@@ -1,3 +1,6 @@
+#nav-small
+  display: none
+
 img.brand
   width: 140px
   height: 160px
@@ -15,3 +18,22 @@ a.nav-btn
     width: 120px
     height: 140px
     position: relative
+  #nav-small
+    display: none
+
+@media (max-width: 773px)
+  #nav
+    display: none
+  #nav-small
+    display: block
+    img.brand
+      width: 30px
+      height: 40px
+      bottom: 10px
+      position: relative
+
+@media (max-width: 773px)
+  #nav
+    display: none
+  #nav-small
+    display: block

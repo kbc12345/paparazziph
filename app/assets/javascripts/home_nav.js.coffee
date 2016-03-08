@@ -7,6 +7,9 @@ $(document).ready ->
   if $(active.concat("-nav-btn"))[0] != undefined
     $(active.concat("-nav-btn"))[0].style.color = "#FF69B4"
 
+  if $(active.concat("-nav-btn-small"))[0] != undefined
+    $(active.concat("-nav-btn-small"))[0].style.color = "#FF69B4"
+
 
 
 $(document).on "click", '.nav-btn', (event) ->
