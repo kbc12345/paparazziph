@@ -14,6 +14,8 @@
     appearance: none
     z-index: 1000
     margin-bottom: 10px
+    &#rates
+      margin-bottom: 20px
   .category
     text-align: center
   span.caret
@@ -31,10 +33,15 @@
     height: 32px
     margin-top: 15px
     &.submit
+      margin-top: 0px
       width: 120px
       background-color: pink
       border-color: pink
       color: black
+    &.form-control
+      margin-top: 5px
+      display: inline
+      position: relative
   button#btn-modal
     visibility: hidden
   img
@@ -48,6 +55,14 @@
     span
       &.package-header
         font-weight: bold
+
+  .form-group
+    margin-bottom: 5px
+  
+  label
+    margin-top: 12px
+    display: block
+    position: absolute
       
   .modal-dialog
     position: absolute

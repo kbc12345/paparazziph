@@ -15,7 +15,7 @@ section#packages
         span We are happy to discuss customized rates for your occasion
         br
         span Kindly contact us to dicuss your event requirements
-      .category.form-group
+      .category
         form.new_booking#new_booking action="/bookings" accept-charset="UTF-8" method="post" data-remote="true" onsubmit="$('#btn-modal').click()"
           span.header Book Your Event Now!
           br
@@ -32,26 +32,35 @@ section#packages
             option value="6 Hours - P8,500" 6 Hours - P8,500
           span.caret onclick="$('#rates').click()"
           br
-          input required="true" type="text" name="booking[client_name]" placeholder="Full Name" 
-          br
-          input required="true" type="text" name="booking[client_email]" placeholder="Email"
-          br
-          input required="true" type="text" name="booking[client_number]" placeholder="Mobile Number"
-          br
-          input required="true" type="text" name="booking[event_title]" placeholder="Event Title"
-          br
-          input required="true" type="date" name="booking[date]" placeholder="Date"
-          br
-          input required="true" type="text" name="booking[start_time]" placeholder="Start Time"
-          br
-          input required="true" type="text" name="booking[venue]" placeholder="Venue Address"
-          br
-          input type="text" name="booking[comment]" placeholder="How did you hear about us?"
+          .form-group
+            label for="client_name" * Name:
+            input.form-control#client_name required="true" type="text" name="booking[client_name]" placeholder="Kenneth Chung"
+          .form-group
+            label for="client_name" * Email:
+            input.form-control#client_email required="true" type="email" name="booking[client_email]" placeholder="thepaparazziteam@gmail.com"
+          .form-group
+            label for="client_number" * Mobile:
+            input.form-control#client_number required="true" type="text" name="booking[client_number]" placeholder="09XX-XXXXXXX"
+          .form-group
+            label for="event_title" * Event Title:
+            input.form-control#event_title required="true" type="text" name="booking[event_title]" placeholder="Me @ 18 Forever"
+          .form-group
+            label for="date" * Date:
+            input.form-control#date required="true" type="date" name="booking[date]" placeholder="Date"
+          .form-group
+            label for="start_time" * Start Time:
+            input.form-control#start_time required="true" type="text" name="booking[start_time]" placeholder="5:30 pm"
+          .form-group
+            label for="venue" * Address:
+            input.form-control#venue required="true" type="text" name="booking[venue]" placeholder="Sofitel Manila Pasay City, Manila, 1300"
+          .form-group
+            label for="booking-comment" Mini Survey:
+            input.form-control#booking-comment type="text" name="booking[comment]" placeholder="How did you hear about us? FB, OLX, etc."
           br
           input.submit.btn.btn-primary type="submit" value="Book Event" name="submitButton"
       button.btn.btn-info.btn-lg#btn-modal type="button" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" Open Modal
     .col-md-6
-      img src=(asset_path('packages.jpg'))
+      img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xlp1/t31.0-8/12819452_1986615804896340_9100305813751602887_o.jpg"
       .row.package-details
         .col-md-6
           .packageInclusions

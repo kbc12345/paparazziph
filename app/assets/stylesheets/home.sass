@@ -54,3 +54,35 @@
     width: 100%
     height: auto
     top: -20px
+
+  p.welcome-small
+    display: none
+
+@media (max-width: 991px)
+  #home
+    img.photo-left
+      display: none
+    img.photo-right
+      display: none
+    img.photo
+      width: calc(100%/11)
+    img.photo-trail
+      margin-left: -4px
+    .photo-container
+      margin-left: 25%
+      overflow: hidden
+      width: 50%
+      height: auto
+      position: relative
+    .photo-album
+      width: 1100%
+    p.welcome
+      display: none
+    p.welcome-small
+      margin-top: 20px
+      text-align: center
+      display: block
+    p.description
+      text-align: center
+
+    
