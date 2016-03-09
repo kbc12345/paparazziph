@@ -18,3 +18,40 @@
     color: red
   .below
     top: 20px
+    position: relative
+  .small
+    display: none
+  .col-xs-offset-1
+    margin-left: 0%
+
+@media (max-width: 991px)
+  #about
+    p
+      font-size: 15px
+      &.big
+        font-size: 25px
+    .col-xs-offset-1
+      margin-left: 0%
+    .side
+      margin-top: 3.5%
+
+@media (max-width: 767px)
+  #about
+    .side
+      margin-top: 2%
+      left: 0px
+    .col-xs-offset-1
+      margin-left: 8.33333333%
+
+@media (max-width: 655px)
+  #about
+    p
+      font-size: 14px
+      &.big
+        font-size: 22px
+
+@media (max-width: 320px)
+  #about
+    p
+      &.big
+        font-size: 18px
