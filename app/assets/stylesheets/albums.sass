@@ -6,10 +6,34 @@
     font-size: 20px
   .albumCover
     width: auto
-    height: 192px
+    height: 285px
+    max-height: 285px
     text-align: center
     background-size: 100%
   .vertical
     background-position-y: -120px
   .albumList
     margin-top: 10px
+
+@media (max-width: 991px)
+  #albums
+    .vertical
+      background-position-y: -80px
+    .albumCover
+      height: 143px
+
+@media (max-width: 767px)
+  #albums
+    .vertical
+      background-position-y: -200px
+    .albumCover
+      max-height: 479px
+      height: 479px
+
+@media (max-width: 400px)
+  #albums
+    .vertical
+      background-position-y: -120px
+    .albumCover
+      max-height: 244px
+      height: 244px
