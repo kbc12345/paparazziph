@@ -1,4 +1,5 @@
 #packages
+  overflow-x: hidden
   p
     text-align: center
     font-style: italic
@@ -7,7 +8,7 @@
   select
     font-size: 1.5em
     position: relative
-    width: 292px
+    width: 100%
     top: 12px
     -webkit-appearance: none
     -moz-appearance: none
@@ -29,7 +30,6 @@
     font-size: 20px
     font-weight: bold
   input
-    width: 292px
     height: 32px
     margin-top: 15px
     &.submit
@@ -40,7 +40,7 @@
       color: black
     &.form-control
       margin-top: 5px
-      display: inline
+      display: inline-block
       position: relative
   button#btn-modal
     visibility: hidden
@@ -57,12 +57,12 @@
         font-weight: bold
 
   .form-group
+    text-align: left
     margin-bottom: 5px
   
   label
     margin-top: 12px
     display: block
-    position: absolute
       
   .modal-dialog
     position: absolute
@@ -70,3 +70,31 @@
     left: calc(50% - 299px)
   .package-details
     margin-top: 20px
+
+
+@media (max-width: 991px)
+  #packages
+    img
+      display: none
+    .package-details
+      margin-top: 0px
+      text-align: center
+    .packageInclusions
+      p.small
+        font-size: 15px
+        padding-left: 10px
+
+@media (max-width: 767px)
+  #packages
+    .modal-dialog
+      position: absolute
+      top: calc(50% - 75px)
+      left: calc(50% - 226px)
+
+@media (max-width: 449px)
+  #packages
+    .modal-dialog
+      width: 300px
+      position: absolute
+      top: calc(50% - 75px)
+      left: calc(50% - 160px)

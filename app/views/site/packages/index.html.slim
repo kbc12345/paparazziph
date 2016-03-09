@@ -8,61 +8,60 @@ section#packages
           p Please wait while we generate a booking request for you...
         .modal-footer
   .row
-    .col-md-5.col-md-offset-1
+    .col-md-5.col-md-offset-1.category
       p
         span Our packages and pricing are listed below
         br
         span We are happy to discuss customized rates for your occasion
         br
-        span Kindly contact us to dicuss your event requirements
-      .category
-        form.new_booking#new_booking action="/bookings" accept-charset="UTF-8" method="post" data-remote="true" onsubmit="$('#btn-modal').click()"
-          span.header Book Your Event Now!
-          br
-          select#bookingCategory name="booking[category]" onchange="changeType()"
-            option value="Photoman" Photoman
-            option value="Photo Coverage" Photo Coverage
-          span.caret
-          br
-          select#rates name="booking[rate]"
-            option value="2 Hours - P5,000" 2 Hours - P5,000
-            option value="3 Hours - P6,000" 3 Hours - P6,000
-            option value="4 Hours - P6,900" 4 Hours - P6,900
-            option value="5 Hours - P7,700" 5 Hours - P7,700
-            option value="6 Hours - P8,500" 6 Hours - P8,500
-          span.caret onclick="$('#rates').click()"
-          br
-          .form-group
-            label for="client_name" * Name:
-            input.form-control#client_name required="true" type="text" name="booking[client_name]" placeholder="Kenneth Chung"
-          .form-group
-            label for="client_name" * Email:
-            input.form-control#client_email required="true" type="email" name="booking[client_email]" placeholder="thepaparazziteam@gmail.com"
-          .form-group
-            label for="client_number" * Mobile:
-            input.form-control#client_number required="true" type="text" name="booking[client_number]" placeholder="09XX-XXXXXXX"
-          .form-group
-            label for="event_title" * Event Title:
-            input.form-control#event_title required="true" type="text" name="booking[event_title]" placeholder="Me @ 18 Forever"
-          .form-group
-            label for="date" * Date:
-            input.form-control#date required="true" type="date" name="booking[date]" placeholder="Date"
-          .form-group
-            label for="start_time" * Start Time:
-            input.form-control#start_time required="true" type="text" name="booking[start_time]" placeholder="5:30 pm"
-          .form-group
-            label for="venue" * Address:
-            input.form-control#venue required="true" type="text" name="booking[venue]" placeholder="Sofitel Manila Pasay City, Manila, 1300"
-          .form-group
-            label for="booking-comment" Mini Survey:
-            input.form-control#booking-comment type="text" name="booking[comment]" placeholder="How did you hear about us? FB, OLX, etc."
-          br
-          input.submit.btn.btn-primary type="submit" value="Book Event" name="submitButton"
+        span Kindly contact us to discuss your event requirements
+      form.new_booking#new_booking action="/bookings" accept-charset="UTF-8" method="post" data-remote="true" onsubmit="$('#btn-modal').click()"
+        span.header Book Your Event Now!
+        br
+        select#bookingCategory name="booking[category]" onchange="changeType()"
+          option value="Photoman" Photoman
+          option value="Photo Coverage" Photo Coverage
+        span.caret
+        br
+        select#rates name="booking[rate]"
+          option value="2 Hours - P5,000" 2 Hours - P5,000
+          option value="3 Hours - P6,000" 3 Hours - P6,000
+          option value="4 Hours - P6,900" 4 Hours - P6,900
+          option value="5 Hours - P7,700" 5 Hours - P7,700
+          option value="6 Hours - P8,500" 6 Hours - P8,500
+        span.caret onclick="$('#rates').click()"
+        br
+        .form-group
+          label for="client_name" * Name:
+          input.form-control#client_name required="true" type="text" name="booking[client_name]" placeholder="Your Full Name"
+        .form-group
+          label for="client_name" * Email:
+          input.form-control#client_email required="true" type="email" name="booking[client_email]" placeholder="Your Email Address"
+        .form-group
+          label for="client_number" * Mobile:
+          input.form-control#client_number required="true" type="text" name="booking[client_number]" placeholder="09XX-XXXXXXX"
+        .form-group
+          label for="event_title" * Event Title:
+          input.form-control#event_title required="true" type="text" name="booking[event_title]" placeholder="Sample Event Title"
+        .form-group
+          label for="date" * Date:
+          input.form-control#date required="true" type="date" name="booking[date]" placeholder="Date"
+        .form-group
+          label for="start_time" * Start Time:
+          input.form-control#start_time required="true" type="text" name="booking[start_time]" placeholder="5:30 pm"
+        .form-group
+          label for="venue" * Address:
+          input.form-control#venue required="true" type="text" name="booking[venue]" placeholder="Venue Address"
+        .form-group
+          label for="booking-comment" Mini Survey:
+          input.form-control#booking-comment type="text" name="booking[comment]" placeholder="How did you hear about us? FB, OLX, etc."
+        br
+        input.submit.btn.btn-primary type="submit" value="Book Event" name="submitButton"
       button.btn.btn-info.btn-lg#btn-modal type="button" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" Open Modal
     .col-md-6
       img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xlp1/t31.0-8/12819452_1986615804896340_9100305813751602887_o.jpg"
       .row.package-details
-        .col-md-6
+        .col-md-6.col-sm-6.col-xs-12
           .packageInclusions
             span.package-header PHOTOMAN PACKAGE
             p.small
@@ -85,7 +84,7 @@ section#packages
               |Facebook Upload
               br
               |Recopies Allowed (will consume printing time)
-        .col-md-6
+        .col-md-6.col-sm-6.col-xs-12
           .packageInclusions
             span.package-header PHOTO COVERAGE PACKAGE
             p.small
