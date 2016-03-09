@@ -1,4 +1,5 @@
 #contact
+  overflow-x: hidden
   p
     text-align: center
     font-style: italic
@@ -41,6 +42,7 @@
     left: -150px
     margin-top: -65px
   .row-margin
+    overflow-y: hidden
     margin-top: 20px
   button
     position: absolute
@@ -56,3 +58,47 @@
   .form-group
     margin-bottom: 5px
     text-align: left
+
+  .small-img-container
+    display: block
+
+@media (max-width: 1284px)
+  #contact
+    img.big
+      width: 510px
+      height: auto
+    .small-img-container
+      display: none
+
+@media (max-width: 1284px)
+  #contact
+    img.big
+      width: 450px
+      height: auto
+
+@media (max-width: 991px)
+  #contact
+    img.big
+      display: none
+    .margin
+      right: 0px
+    .padding-none
+      padding-left: 15px
+    p.below
+      text-align: center
+
+@media (max-width: 489px)
+  #contact
+    p.below
+      font-size: 13px
+
+@media (max-width: 389px)
+  #contact
+    p.below
+      font-size: 11px
+
+@media (max-width: 320px)
+  #contact
+    p.below
+      font-size: 10px
+
