@@ -49,7 +49,7 @@ class Site::BookingsController < SiteController
     mail.subject = "Booking Request Received"
     mail.text = message
     if params[:booking]["category"] == "Photoman"
-      mail.attach('app/assets/files/photoman-proposal.docx')
+      mail.attach('app/assets/files/paparazzi-photoman-proposal.docx')
     else
       mail.attach('app/assets/files/photo-coverage.docx')
     end
