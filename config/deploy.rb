@@ -1,4 +1,4 @@
-lock '3.4.0'
+lock '3.5.0'
 
 set :application, 'paparazziph'
 set :repo_url, 'git@github.com:kbc12345/paparazziph.git' # Edit this to match your repository
