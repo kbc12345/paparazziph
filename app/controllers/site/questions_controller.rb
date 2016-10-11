@@ -53,7 +53,7 @@ class Site::QuestionsController < SiteController
     @client.messages.create(
       from: '+12015523568',
       to: '+639778055808',
-      body: '#{params[:question]["name"]} has inquired. please check your email.'
+      body: params[:question]["name"] + ' has inquired. please check your email.'
     )
 
     render json: {message: "success"}

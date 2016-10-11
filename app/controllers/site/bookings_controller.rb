@@ -68,7 +68,7 @@ class Site::BookingsController < SiteController
     @client.messages.create(
       from: '+12015523568',
       to: '+639778055808',
-      body: '#{params[:booking]["client_name"]} has submit a booking. please check your email.'
+      body: params[:booking]["client_name"] + ' has submit a booking. please check your email.'
     )
 
     render json: {}
