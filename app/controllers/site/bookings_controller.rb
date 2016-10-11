@@ -1,6 +1,7 @@
 require 'net/smtp'
 require 'rubygems'
 require 'mailfactory'
+require 'twilio-ruby'
 class Site::BookingsController < SiteController
   skip_before_action :verify_authenticity_token
   def create
@@ -59,6 +60,16 @@ class Site::BookingsController < SiteController
     smtp.start('sparkpostmail.com', ENV["sparkpost_username"], ENV["sparkpost_password"], :login)
     smtp.send_message mail.to_s(), 'no-reply@paparazziph.com', params[:booking]["client_email"]
     smtp.finish
+
+    account_sid = "ACbed882135a28a45fba1514d51cf9106a"
+    auth_token = "acd2c680aeda08da72ce6e83ac4f771f"
+    @client = Twilio::REST::Client.new(account_sid, auth_token)
+
+    @client.messages.create(
+      from: '+12015523568',
+      to: '+639778055808',
+      body: '#{params[:booking]["client_name"]} has submit a booking. please check your email.'
+    )
 
     render json: {}
   end
